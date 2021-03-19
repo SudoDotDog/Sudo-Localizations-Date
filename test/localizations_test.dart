@@ -1,7 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 
+import 'mock.dart';
+
 void main() {
-  test('placeholder', () {
-    expect(1, 1);
+  testWidgets('mock widget has a title', (WidgetTester tester) async {
+    await tester.pumpWidget(MockWidget());
   });
 }
