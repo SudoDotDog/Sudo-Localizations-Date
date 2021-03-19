@@ -1,5 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:localizations_date/src/declare.dart';
+import 'package:localizations_date/src/en.dart';
+import 'package:localizations_date/src/zh.dart';
 
 class GlobalDateLocalizations {
   final Locale locale;
@@ -11,6 +14,25 @@ class GlobalDateLocalizations {
       context,
       GlobalDateLocalizations,
     );
+  }
+
+  static Map<String, LocalizationDateFormatFunction> _localizedFormat = {
+    'en': localizationDateEnglishFormat,
+    'zh': localizationDateChineseFormat,
+  };
+
+  LocalizationDateFormatFunction get _formatMap {
+    final LocalizationDateFormatFunction function =
+        _localizedFormat[locale.languageCode];
+    if (function == null) {
+      return localizationDateEnglishFormat;
+    }
+    return function;
+  }
+
+  String formatDate(DateTime date) {
+    final String value = this._formatMap(date);
+    return value;
   }
 
   static _GlobalDateLocalizationsDelegate delegate =
