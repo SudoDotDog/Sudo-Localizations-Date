@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:localizations_date/src/declare/date.dart';
 import 'package:localizations_date/src/declare/declare.dart';
+import 'package:localizations_date/src/declare/time.dart';
 import 'package:localizations_date/src/en.dart';
 import 'package:localizations_date/src/zh.dart';
 
@@ -30,8 +32,16 @@ class GlobalDateLocalizations {
     return function;
   }
 
-  String formatDate(DateTime date) {
-    final String value = this._formatMap(date);
+  String formatDate(
+    DateTime date, {
+    LocalizationDateFormatDateConfig dateConfig,
+    LocalizationDateFormatTimeConfig timeConfig,
+  }) {
+    final String value = this._formatMap(
+      date,
+      dateConfig: dateConfig,
+      timeConfig: timeConfig,
+    );
     return value;
   }
 
