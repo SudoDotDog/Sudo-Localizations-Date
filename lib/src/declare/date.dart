@@ -44,4 +44,11 @@ class LocalizationDateFormatDateConfig {
       includesDay: day,
     );
   }
+
+  bool ensureIncludes() {
+    if (!this.includesDate) {
+      return false;
+    }
+    return this.includesYear || this.includesMonth || this.includesDay;
+  }
 }

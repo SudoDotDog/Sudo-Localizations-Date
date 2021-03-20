@@ -50,4 +50,14 @@ class LocalizationDateFormatTimeConfig {
       includesMillisecond: millisecond,
     );
   }
+
+  bool ensureIncludes() {
+    if (!this.includesTime) {
+      return false;
+    }
+    return this.includesHour ||
+        this.includesMinute ||
+        this.includesSecond ||
+        this.includesMillisecond;
+  }
 }
