@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:localizations_date/localizations_date.dart';
 
-class MockWidget extends StatelessWidget {
+class MockParseWidget extends StatelessWidget {
   final Locale locale;
 
-  MockWidget({
+  final DateTime date;
+
+  MockParseWidget({
     @required this.locale,
+    @required this.date,
   });
 
   @override
@@ -16,8 +19,16 @@ class MockWidget extends StatelessWidget {
       ],
       locale: this.locale,
       home: Scaffold(
-        body: Center(
-          child: Text("Test"),
+        body: Builder(
+          builder: (BuildContext context) {
+            final dateLocalizations = GlobalDateLocalizations.of(context);
+
+            return Text(
+              dateLocalizations.formatDate(
+                this.date,
+              ),
+            );
+          },
         ),
       ),
     );
