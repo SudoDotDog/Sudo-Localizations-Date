@@ -13,5 +13,9 @@ void main() {
         date: date,
       ),
     );
+
+    final Finder textFinder = find.byType(Text);
+
+    expect(textFinder.toString(), "Hello");
   });
 }
