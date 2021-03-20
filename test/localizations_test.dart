@@ -15,7 +15,8 @@ void main() {
     );
 
     final Finder textFinder = find.byType(Text);
+    final Text textWidget = textFinder.evaluate().single.widget;
 
-    expect(textFinder.toString(), "Hello");
+    expect(textWidget.data, "2021");
   });
 }
