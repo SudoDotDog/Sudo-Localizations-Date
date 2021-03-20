@@ -1,4 +1,4 @@
-import 'package:localizations_date/src/declare/date.dart';
+import 'package:localizations_date/src/declare/declare.dart';
 
 LocalizationDateFormatFunction localizationDateChineseFormat = (
   DateTime date,

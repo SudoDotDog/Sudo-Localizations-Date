@@ -45,8 +45,3 @@ class LocalizationDateFormatDateConfig {
     );
   }
 }
-
-typedef LocalizationDateFormatFunction = String Function(
-  DateTime date, {
-  LocalizationDateFormatDateConfig dateConfig,
-});
