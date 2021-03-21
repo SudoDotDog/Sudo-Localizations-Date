@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:localizations_date/src/declare/date.dart';
 
-import 'mock.dart';
+import '../mock/parse-widget.dart';
 
 void main() {
   testWidgets('mock date parse widget in english', (WidgetTester tester) async {

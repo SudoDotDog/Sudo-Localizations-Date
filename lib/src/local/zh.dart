@@ -4,8 +4,8 @@ import 'package:localizations_date/src/declare/time.dart';
 
 LocalFormatFunction localizationDateChineseLocalFormat = (
   DateTime date, {
-  LocalFormatDateConfig dateConfig,
-  LocalFormatTimeConfig timeConfig,
+  LocalFormatDateConfig dateConfig = LocalFormatDateConfig.none,
+  LocalFormatTimeConfig timeConfig = LocalFormatTimeConfig.none,
 }) {
   final List<String> builder = [];
 
@@ -27,7 +27,10 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
     if (dateConfig.includesDay) {
       builder.add(date.day.toString());
     }
-    builder.add(' ');
+
+    if (timeConfig.ensureIncludes()) {
+      builder.add(' ');
+    }
   }
 
   if (timeConfig.ensureIncludes()) {
