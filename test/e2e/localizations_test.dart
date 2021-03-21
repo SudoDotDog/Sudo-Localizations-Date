@@ -17,10 +17,11 @@ void main() {
     );
 
     final Finder textFinder = find.byType(Text);
-    print(textFinder);
     final Text textWidget = textFinder.evaluate().single.widget;
-    print(textWidget);
 
-    expect(textWidget.data, "2021");
+    expect(
+      textWidget.data,
+      "${date.year}-${date.month}-${date.day}",
+    );
   });
 }

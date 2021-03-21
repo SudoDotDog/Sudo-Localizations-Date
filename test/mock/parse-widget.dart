@@ -19,20 +19,25 @@ class MockParseWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateLocalizations = GlobalDateLocalizations.of(context);
-    print(dateLocalizations.localFormatDate(
-      this.date,
-      dateConfig: this.dateConfig,
-      timeConfig: this.timeConfig,
-    ));
-
     return MaterialApp(
       localizationsDelegates: [
         GlobalDateLocalizations.delegate,
       ],
       locale: this.locale,
       home: Scaffold(
-        body: Text("Test"),
+        body: Builder(
+          builder: (BuildContext context) {
+            final dateLocalizations = GlobalDateLocalizations.of(context);
+
+            return Text(
+              dateLocalizations.localFormatDate(
+                this.date,
+                dateConfig: this.dateConfig,
+                timeConfig: this.timeConfig,
+              ),
+            );
+          },
+        ),
       ),
     );
   }

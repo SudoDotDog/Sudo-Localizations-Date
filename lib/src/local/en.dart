@@ -9,6 +9,14 @@ LocalFormatFunction localizationDateEnglishLocalFormat = (
 }) {
   final List<String> builder = [];
 
+  if (dateConfig == null) {
+    dateConfig = LocalFormatDateConfig.none;
+  }
+
+  if (timeConfig == null) {
+    timeConfig = LocalFormatTimeConfig.none;
+  }
+
   if (dateConfig.ensureIncludes()) {
     if (dateConfig.includesYear) {
       builder.add(date.year.toString());
