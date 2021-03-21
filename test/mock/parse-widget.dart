@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:localizations_date/localizations_date.dart';
-import 'package:localizations_date/src/declare/date.dart';
-import 'package:localizations_date/src/declare/time.dart';
+import 'package:localizations_date/src/local/declare/date.dart';
+import 'package:localizations_date/src/local/declare/time.dart';
 
 class MockParseWidget extends StatelessWidget {
   final Locale locale;

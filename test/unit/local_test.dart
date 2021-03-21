@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:localizations_date/src/declare/date.dart';
-import 'package:localizations_date/src/declare/time.dart';
+import 'package:localizations_date/src/local/declare/date.dart';
+import 'package:localizations_date/src/local/declare/time.dart';
 import 'package:localizations_date/src/local/en.dart';
 
 void main() {

@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:localizations_date/src/declare/date.dart';
-import 'package:localizations_date/src/declare/declare.dart';
-import 'package:localizations_date/src/declare/time.dart';
+import 'package:localizations_date/src/local/declare/date.dart';
+import 'package:localizations_date/src/local/declare/declare.dart';
+import 'package:localizations_date/src/local/declare/time.dart';
 import 'package:localizations_date/src/local/en.dart';
 import 'package:localizations_date/src/local/zh.dart';
 
