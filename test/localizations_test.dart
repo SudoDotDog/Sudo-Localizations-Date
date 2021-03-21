@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:localizations_date/src/declare/date.dart';
 
 import 'mock.dart';
 
@@ -11,6 +12,7 @@ void main() {
       MockParseWidget(
         locale: Locale('en'),
         date: date,
+        dateConfig: LocalizationDateFormatDateConfig.all,
       ),
     );
 
