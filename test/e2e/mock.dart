@@ -7,8 +7,8 @@ class MockParseWidget extends StatelessWidget {
   final Locale locale;
 
   final DateTime date;
-  final LocalizationDateFormatDateConfig dateConfig;
-  final LocalizationDateFormatTimeConfig timeConfig;
+  final LocalFormatDateConfig dateConfig;
+  final LocalFormatTimeConfig timeConfig;
 
   MockParseWidget({
     @required this.locale,
@@ -19,25 +19,20 @@ class MockParseWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dateLocalizations = GlobalDateLocalizations.of(context);
+    print(dateLocalizations.localFormatDate(
+      this.date,
+      dateConfig: this.dateConfig,
+      timeConfig: this.timeConfig,
+    ));
+
     return MaterialApp(
       localizationsDelegates: [
         GlobalDateLocalizations.delegate,
       ],
       locale: this.locale,
       home: Scaffold(
-        body: Builder(
-          builder: (BuildContext context) {
-            final dateLocalizations = GlobalDateLocalizations.of(context);
-
-            return Text(
-              dateLocalizations.formatDate(
-                this.date,
-                dateConfig: this.dateConfig,
-                timeConfig: this.timeConfig,
-              ),
-            );
-          },
-        ),
+        body: Text("Test"),
       ),
     );
   }

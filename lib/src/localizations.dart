@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:localizations_date/src/declare/date.dart';
 import 'package:localizations_date/src/declare/declare.dart';
 import 'package:localizations_date/src/declare/time.dart';
-import 'package:localizations_date/src/en.dart';
-import 'package:localizations_date/src/zh.dart';
+import 'package:localizations_date/src/local/en.dart';
+import 'package:localizations_date/src/local/zh.dart';
 
 class GlobalDateLocalizations {
   final Locale locale;
@@ -18,24 +18,23 @@ class GlobalDateLocalizations {
     );
   }
 
-  static Map<String, LocalizationDateFormatFunction> _localizedFormat = {
-    'en': localizationDateEnglishFormat,
-    'zh': localizationDateChineseFormat,
+  static Map<String, LocalFormatFunction> _localizedFormat = {
+    'en': localizationDateEnglishLocalFormat,
+    'zh': localizationDateChineseLocalFormat,
   };
 
-  LocalizationDateFormatFunction get _formatMap {
-    final LocalizationDateFormatFunction function =
-        _localizedFormat[locale.languageCode];
+  LocalFormatFunction get _formatMap {
+    final LocalFormatFunction function = _localizedFormat[locale.languageCode];
     if (function == null) {
-      return localizationDateEnglishFormat;
+      return localizationDateEnglishLocalFormat;
     }
     return function;
   }
 
-  String formatDate(
+  String localFormatDate(
     DateTime date, {
-    LocalizationDateFormatDateConfig dateConfig,
-    LocalizationDateFormatTimeConfig timeConfig,
+    LocalFormatDateConfig dateConfig,
+    LocalFormatTimeConfig timeConfig,
   }) {
     final String value = this._formatMap(
       date,

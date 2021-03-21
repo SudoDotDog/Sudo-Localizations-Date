@@ -1,43 +1,41 @@
-class LocalizationDateFormatDateConfig {
+class LocalFormatDateConfig {
   final bool includesDate;
 
   final bool includesYear;
   final bool includesMonth;
   final bool includesDay;
 
-  const LocalizationDateFormatDateConfig({
+  const LocalFormatDateConfig({
     this.includesDate = true,
     this.includesYear = true,
     this.includesMonth = true,
     this.includesDay = true,
   });
 
-  static const LocalizationDateFormatDateConfig all =
-      const LocalizationDateFormatDateConfig(
+  static const LocalFormatDateConfig all = const LocalFormatDateConfig(
     includesDate: true,
     includesYear: true,
     includesMonth: true,
     includesDay: true,
   );
 
-  static const LocalizationDateFormatDateConfig none =
-      const LocalizationDateFormatDateConfig(
+  static const LocalFormatDateConfig none = const LocalFormatDateConfig(
     includesDate: false,
     includesYear: false,
     includesMonth: false,
     includesDay: false,
   );
 
-  factory LocalizationDateFormatDateConfig.only({
+  factory LocalFormatDateConfig.only({
     bool year,
     bool month,
     bool day,
   }) {
     if (!year && !month && !day) {
-      return LocalizationDateFormatDateConfig.none;
+      return LocalFormatDateConfig.none;
     }
 
-    return LocalizationDateFormatDateConfig(
+    return LocalFormatDateConfig(
       includesDate: true,
       includesYear: year,
       includesMonth: month,

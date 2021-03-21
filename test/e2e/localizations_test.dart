@@ -12,12 +12,14 @@ void main() {
       MockParseWidget(
         locale: Locale('en'),
         date: date,
-        dateConfig: LocalizationDateFormatDateConfig.all,
+        dateConfig: LocalFormatDateConfig.all,
       ),
     );
 
     final Finder textFinder = find.byType(Text);
+    print(textFinder);
     final Text textWidget = textFinder.evaluate().single.widget;
+    print(textWidget);
 
     expect(textWidget.data, "2021");
   });

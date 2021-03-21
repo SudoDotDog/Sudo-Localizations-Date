@@ -1,4 +1,4 @@
-class LocalizationDateFormatTimeConfig {
+class LocalFormatTimeConfig {
   final bool includesTime;
 
   final bool includesHour;
@@ -6,7 +6,7 @@ class LocalizationDateFormatTimeConfig {
   final bool includesSecond;
   final bool includesMillisecond;
 
-  const LocalizationDateFormatTimeConfig({
+  const LocalFormatTimeConfig({
     this.includesTime = true,
     this.includesHour = true,
     this.includesMinute = true,
@@ -14,8 +14,7 @@ class LocalizationDateFormatTimeConfig {
     this.includesMillisecond = true,
   });
 
-  static const LocalizationDateFormatTimeConfig all =
-      const LocalizationDateFormatTimeConfig(
+  static const LocalFormatTimeConfig all = const LocalFormatTimeConfig(
     includesTime: true,
     includesHour: true,
     includesMinute: true,
@@ -23,8 +22,7 @@ class LocalizationDateFormatTimeConfig {
     includesMillisecond: true,
   );
 
-  static const LocalizationDateFormatTimeConfig none =
-      const LocalizationDateFormatTimeConfig(
+  static const LocalFormatTimeConfig none = const LocalFormatTimeConfig(
     includesTime: false,
     includesHour: false,
     includesMinute: false,
@@ -32,17 +30,17 @@ class LocalizationDateFormatTimeConfig {
     includesMillisecond: false,
   );
 
-  factory LocalizationDateFormatTimeConfig.only({
+  factory LocalFormatTimeConfig.only({
     bool hour,
     bool minute,
     bool second,
     bool millisecond,
   }) {
     if (!hour && !minute && !second && !millisecond) {
-      return LocalizationDateFormatTimeConfig.none;
+      return LocalFormatTimeConfig.none;
     }
 
-    return LocalizationDateFormatTimeConfig(
+    return LocalFormatTimeConfig(
       includesTime: true,
       includesHour: hour,
       includesMinute: minute,
