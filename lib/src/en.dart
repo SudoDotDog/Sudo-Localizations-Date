@@ -9,22 +9,46 @@ LocalizationDateFormatFunction localizationDateEnglishFormat = (
 }) {
   final List<String> builder = [];
 
-  if (dateConfig.includesYear) {
-    builder.add(date.year.toString());
+  if (dateConfig.ensureIncludes()) {
+    if (dateConfig.includesYear) {
+      builder.add(date.year.toString());
+      if (dateConfig.includesMonth) {
+        builder.add("-");
+      }
+    }
+
     if (dateConfig.includesMonth) {
-      builder.add("-");
+      builder.add(date.month.toString());
+      if (dateConfig.includesDay) {
+        builder.add("-");
+      }
     }
-  }
 
-  if (dateConfig.includesMonth) {
-    builder.add(date.month.toString());
     if (dateConfig.includesDay) {
-      builder.add("-");
+      builder.add(date.day.toString());
+    }
+    builder.add(' ');
+  }
+
+  if (timeConfig.ensureIncludes()) {
+    if (timeConfig.includesHour) {
+      builder.add(date.hour.toString());
+      if (timeConfig.includesMinute) {
+        builder.add(":");
+      }
+    }
+
+    if (timeConfig.includesMinute) {
+      builder.add(date.minute.toString());
+      if (timeConfig.includesSecond) {
+        builder.add(":");
+      }
+    }
+
+    if (timeConfig.includesSecond) {
+      builder.add(date.second.toString());
     }
   }
 
-  if (dateConfig.includesDay) {
-    builder.add(date.day.toString());
-  }
-  return date.year.toString();
+  return builder.join();
 };
