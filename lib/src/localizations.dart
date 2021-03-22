@@ -6,7 +6,7 @@ import 'package:localizations_date/src/local/declare/time.dart';
 import 'package:localizations_date/src/local/en.dart';
 import 'package:localizations_date/src/local/zh.dart';
 import 'package:localizations_date/src/relative/declare/declare.dart';
-import 'package:localizations_date/src/relative/declare/en.dart';
+import 'package:localizations_date/src/relative/en.dart';
 
 class GlobalDateLocalizations {
   final Locale locale;
