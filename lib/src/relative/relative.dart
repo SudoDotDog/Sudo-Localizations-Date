@@ -23,6 +23,11 @@ String localizationDateRelativeFormat(
     return builder.join();
   }
 
+  if (abstractDifference < Duration(minutes: 1).inMilliseconds) {
+    builder.add(map['less-than-a-minute']);
+    return builder.join();
+  }
+
   if (abstractDifference < Duration(hours: 1).inMilliseconds) {
     builder.add(
       (abstractDifference / Duration(minutes: 1).inMilliseconds)

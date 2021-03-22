@@ -31,7 +31,23 @@ void main() {
 
     expect(
       formatted,
-      localizationDateEnglishRelativeMap['about-now'],
+      localizationDateEnglishRelativeMap['just-now'],
+    );
+  });
+
+  test('relative format - less than a minute', () {
+    final DateTime currentDate = DateTime(1995, 5, 5, 5, 5, 20);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      localizationDateEnglishRelativeMap['less-than-a-minute'],
     );
   });
 
