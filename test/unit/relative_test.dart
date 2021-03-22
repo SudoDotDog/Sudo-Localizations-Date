@@ -146,4 +146,68 @@ void main() {
       "5 ${localizationDateEnglishRelativeMap['days-later']}",
     );
   });
+
+  test('relative format - months ago', () {
+    final DateTime currentDate = DateTime(1995, 10, 5, 5, 5, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['months-ago']}",
+    );
+  });
+
+  test('relative format - months later', () {
+    final DateTime currentDate = DateTime(1995, 0, 5, 5, 5, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['months-later']}",
+    );
+  });
+
+  test('relative format - years ago', () {
+    final DateTime currentDate = DateTime(2000, 5, 5, 5, 5, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['years-ago']}",
+    );
+  });
+
+  test('relative format - years later', () {
+    final DateTime currentDate = DateTime(1990, 5, 5, 5, 5, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['years-later']}",
+    );
+  });
 }

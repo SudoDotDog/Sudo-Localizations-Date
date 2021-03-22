@@ -63,7 +63,7 @@ String localizationDateRelativeFormat(
 
   if (abstractDifference < Duration(days: 365).inMilliseconds) {
     builder.add(
-      (abstractDifference / Duration(hours: 30).inMilliseconds)
+      (abstractDifference / Duration(days: 30).inMilliseconds)
           .round()
           .toString(),
     );
@@ -73,7 +73,7 @@ String localizationDateRelativeFormat(
   }
 
   builder.add(
-    (abstractDifference / Duration(hours: 365).inMilliseconds)
+    (abstractDifference / Duration(days: 365).inMilliseconds)
         .round()
         .toString(),
   );
