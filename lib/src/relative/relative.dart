@@ -33,55 +33,80 @@ String localizationDateRelativeFormat(
   }
 
   if (abstractDifference < Duration(hours: 1).inMilliseconds) {
-    builder.add(
-      (abstractDifference / Duration(minutes: 1).inMilliseconds)
-          .round()
-          .toString(),
-    );
+    final int durValue = Duration(minutes: 1).inMilliseconds;
+    final int diffValue = (abstractDifference / durValue).round();
+
+    builder.add(diffValue.toString());
     builder.add(map['space']);
-    builder.add(isBefore ? map['minutes-ago'] : map['minutes-later']);
+
+    if (diffValue == 1) {
+      builder.add(isBefore ? map['minute-ago'] : map['minute-later']);
+    } else {
+      builder.add(isBefore ? map['minutes-ago'] : map['minutes-later']);
+    }
+
     return builder.join();
   }
 
   if (abstractDifference < Duration(days: 1).inMilliseconds) {
-    builder.add(
-      (abstractDifference / Duration(hours: 1).inMilliseconds)
-          .round()
-          .toString(),
-    );
+    final int durValue = Duration(hours: 1).inMilliseconds;
+    final int diffValue = (abstractDifference / durValue).round();
+
+    builder.add(diffValue.toString());
     builder.add(map['space']);
-    builder.add(isBefore ? map['hours-ago'] : map['hours-later']);
+
+    if (diffValue == 1) {
+      builder.add(isBefore ? map['hour-ago'] : map['hour-later']);
+    } else {
+      builder.add(isBefore ? map['hours-ago'] : map['hours-later']);
+    }
+
     return builder.join();
   }
 
   if (abstractDifference < Duration(days: 30).inMilliseconds) {
-    builder.add(
-      (abstractDifference / Duration(days: 1).inMilliseconds)
-          .round()
-          .toString(),
-    );
+    final int durValue = Duration(days: 1).inMilliseconds;
+    final int diffValue = (abstractDifference / durValue).round();
+
+    builder.add(diffValue.toString());
     builder.add(map['space']);
-    builder.add(isBefore ? map['days-ago'] : map['days-later']);
+
+    if (diffValue == 1) {
+      builder.add(isBefore ? map['day-ago'] : map['day-later']);
+    } else {
+      builder.add(isBefore ? map['days-ago'] : map['days-later']);
+    }
+
     return builder.join();
   }
 
   if (abstractDifference < Duration(days: 365).inMilliseconds) {
-    builder.add(
-      (abstractDifference / Duration(days: 30).inMilliseconds)
-          .round()
-          .toString(),
-    );
+    final int durValue = Duration(days: 30).inMilliseconds;
+    final int diffValue = (abstractDifference / durValue).round();
+
+    builder.add(diffValue.toString());
     builder.add(map['space']);
-    builder.add(isBefore ? map['months-ago'] : map['months-later']);
+
+    if (diffValue == 1) {
+      builder.add(isBefore ? map['month-ago'] : map['month-later']);
+    } else {
+      builder.add(isBefore ? map['months-ago'] : map['months-later']);
+    }
+
     return builder.join();
   }
 
-  builder.add(
-    (abstractDifference / Duration(days: 365).inMilliseconds)
-        .round()
-        .toString(),
-  );
+  final int durValue = Duration(days: 365).inMilliseconds;
+  final int diffValue = (abstractDifference / durValue).round();
+
+  builder.add(diffValue.toString());
   builder.add(map['space']);
-  builder.add(isBefore ? map['years-ago'] : map['years-later']);
+
+  if (diffValue == 1) {
+    builder.add(isBefore ? map['year-ago'] : map['year-later']);
+  } else {
+    builder.add(isBefore ? map['years-ago'] : map['years-later']);
+  }
+
   return builder.join();
 }
