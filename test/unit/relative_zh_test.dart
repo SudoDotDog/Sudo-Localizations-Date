@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:localizations_date/src/relative/en.dart';
 import 'package:localizations_date/src/relative/relative.dart';
+import 'package:localizations_date/src/relative/zh.dart';
 
 void main() {
   test('relative format - about now', () {
@@ -9,13 +10,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      localizationDateEnglishRelativeMap['about-now'],
+      localizationDateChineseRelativeMap['about-now'],
     );
   });
 
@@ -25,13 +26,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      localizationDateEnglishRelativeMap['just-now'],
+      localizationDateChineseRelativeMap['just-now'],
     );
   });
 
@@ -41,13 +42,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      localizationDateEnglishRelativeMap['less-than-a-minute'],
+      localizationDateChineseRelativeMap['less-than-a-minute'],
     );
   });
 
@@ -57,13 +58,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['minutes-ago']}",
+      "5${localizationDateChineseRelativeMap['minutes-ago']}",
     );
   });
 
@@ -73,13 +74,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['minutes-later']}",
+      "5${localizationDateChineseRelativeMap['minutes-later']}",
     );
   });
 
@@ -89,13 +90,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['hours-ago']}",
+      "5${localizationDateChineseRelativeMap['hours-ago']}",
     );
   });
 
@@ -105,13 +106,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['hours-later']}",
+      "5${localizationDateChineseRelativeMap['hours-later']}",
     );
   });
 
@@ -121,13 +122,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['days-ago']}",
+      "5${localizationDateChineseRelativeMap['days-ago']}",
     );
   });
 
@@ -137,13 +138,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['days-later']}",
+      "5${localizationDateChineseRelativeMap['days-later']}",
     );
   });
 
@@ -153,13 +154,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['months-ago']}",
+      "5${localizationDateChineseRelativeMap['months-ago']}",
     );
   });
 
@@ -169,13 +170,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['months-later']}",
+      "5${localizationDateChineseRelativeMap['months-later']}",
     );
   });
 
@@ -185,13 +186,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['years-ago']}",
+      "5${localizationDateChineseRelativeMap['years-ago']}",
     );
   });
 
@@ -201,13 +202,13 @@ void main() {
 
     final String formatted = localizationDateRelativeFormat(
       staticDate,
-      localizationDateEnglishRelativeMap,
+      localizationDateChineseRelativeMap,
       now: currentDate,
     );
 
     expect(
       formatted,
-      "5 ${localizationDateEnglishRelativeMap['years-later']}",
+      "5${localizationDateChineseRelativeMap['years-later']}",
     );
   });
 }
