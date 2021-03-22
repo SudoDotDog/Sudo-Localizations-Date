@@ -39,5 +39,16 @@ String localizationDateRelativeFormat(
     return builder.join();
   }
 
+  if (abstractDifference < Duration(days: 1).inMilliseconds) {
+    builder.add(
+      (abstractDifference / Duration(hours: 1).inMilliseconds)
+          .round()
+          .toString(),
+    );
+    builder.add(' ');
+    builder.add(isBefore ? map['hours-ago'] : map['hours-later']);
+    return builder.join();
+  }
+
   return builder.join();
 }

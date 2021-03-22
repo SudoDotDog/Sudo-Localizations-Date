@@ -9,4 +9,8 @@ const Map<String, String> localizationDateEnglishRelativeMap = {
   // Minutes ago
   'minutes-ago': 'minutes ago',
   'minutes-later': 'minutes later',
+
+  // Hours ago
+  'hours-ago': 'hours ago',
+  'hours-later': 'hours later',
 };
