@@ -66,4 +66,52 @@ void main() {
       "5 ${localizationDateEnglishRelativeMap['minutes-ago']}",
     );
   });
+
+  test('relative format - minutes later', () {
+    final DateTime currentDate = DateTime(1995, 5, 5, 5, 0, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['minutes-later']}",
+    );
+  });
+
+  test('relative format - hours ago', () {
+    final DateTime currentDate = DateTime(1995, 5, 5, 10, 5, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['hours-ago']}",
+    );
+  });
+
+  test('relative format - hours later', () {
+    final DateTime currentDate = DateTime(1995, 5, 5, 0, 5, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['hours-later']}",
+    );
+  });
 }
