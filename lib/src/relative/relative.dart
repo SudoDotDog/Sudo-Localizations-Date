@@ -52,7 +52,7 @@ String localizationDateRelativeFormat(
 
   if (abstractDifference < Duration(days: 30).inMilliseconds) {
     builder.add(
-      (abstractDifference / Duration(hours: 365).inMilliseconds)
+      (abstractDifference / Duration(days: 1).inMilliseconds)
           .round()
           .toString(),
     );
