@@ -34,7 +34,7 @@ String localizationDateRelativeFormat(
           .round()
           .toString(),
     );
-    builder.add(' ');
+    builder.add(map['space']);
     builder.add(isBefore ? map['minutes-ago'] : map['minutes-later']);
     return builder.join();
   }
@@ -45,7 +45,7 @@ String localizationDateRelativeFormat(
           .round()
           .toString(),
     );
-    builder.add(' ');
+    builder.add(map['space']);
     builder.add(isBefore ? map['hours-ago'] : map['hours-later']);
     return builder.join();
   }
@@ -56,7 +56,7 @@ String localizationDateRelativeFormat(
           .round()
           .toString(),
     );
-    builder.add(' ');
+    builder.add(map['space']);
     builder.add(isBefore ? map['days-ago'] : map['days-later']);
     return builder.join();
   }
@@ -67,7 +67,7 @@ String localizationDateRelativeFormat(
           .round()
           .toString(),
     );
-    builder.add(' ');
+    builder.add(map['space']);
     builder.add(isBefore ? map['months-ago'] : map['months-later']);
     return builder.join();
   }
@@ -77,7 +77,7 @@ String localizationDateRelativeFormat(
         .round()
         .toString(),
   );
-  builder.add(' ');
+  builder.add(map['space']);
   builder.add(isBefore ? map['years-ago'] : map['years-later']);
   return builder.join();
 }

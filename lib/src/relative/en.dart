@@ -1,4 +1,7 @@
 const Map<String, String> localizationDateEnglishRelativeMap = {
+  // Space
+  'space': ' ',
+
   // Now
   'about-now': 'About now',
   'just-now': 'Just now',
