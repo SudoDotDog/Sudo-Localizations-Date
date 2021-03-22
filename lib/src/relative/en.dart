@@ -22,20 +22,20 @@ const Map<String, String> localizationDateEnglishRelativeMap = {
   'hours-later': 'hours later',
 
   // Days ago
-  'day-ago': 'day ago',
-  'day-later': 'day later',
+  'yesterday': 'Yesterday',
+  'tomorrow': 'Tomorrow',
   'days-ago': 'days ago',
   'days-later': 'days later',
 
   // Months ago
-  'month-ago': 'month ago',
-  'month-later': 'month later',
+  'last-month': 'Last month',
+  'next-month': 'Next month',
   'months-ago': 'months ago',
   'months-later': 'months later',
 
   // Years ago
-  'year-ago': 'year ago',
-  'year-later': 'year later',
+  'last-year': 'Last year',
+  'next-year': 'Next year',
   'years-ago': 'years ago',
   'years-later': 'years later',
 };

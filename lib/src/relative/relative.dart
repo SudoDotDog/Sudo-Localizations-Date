@@ -68,12 +68,11 @@ String localizationDateRelativeFormat(
     final int durValue = Duration(days: 1).inMilliseconds;
     final int diffValue = (abstractDifference / durValue).round();
 
-    builder.add(diffValue.toString());
-    builder.add(map['space']);
-
     if (diffValue == 1) {
-      builder.add(isBefore ? map['day-ago'] : map['day-later']);
+      builder.add(isBefore ? map['yesterday'] : map['tomorrow']);
     } else {
+      builder.add(diffValue.toString());
+      builder.add(map['space']);
       builder.add(isBefore ? map['days-ago'] : map['days-later']);
     }
 
@@ -84,12 +83,11 @@ String localizationDateRelativeFormat(
     final int durValue = Duration(days: 30).inMilliseconds;
     final int diffValue = (abstractDifference / durValue).round();
 
-    builder.add(diffValue.toString());
-    builder.add(map['space']);
-
     if (diffValue == 1) {
-      builder.add(isBefore ? map['month-ago'] : map['month-later']);
+      builder.add(isBefore ? map['last-month'] : map['next-month']);
     } else {
+      builder.add(diffValue.toString());
+      builder.add(map['space']);
       builder.add(isBefore ? map['months-ago'] : map['months-later']);
     }
 
@@ -99,12 +97,11 @@ String localizationDateRelativeFormat(
   final int durValue = Duration(days: 365).inMilliseconds;
   final int diffValue = (abstractDifference / durValue).round();
 
-  builder.add(diffValue.toString());
-  builder.add(map['space']);
-
   if (diffValue == 1) {
-    builder.add(isBefore ? map['year-ago'] : map['year-later']);
+    builder.add(isBefore ? map['last-year'] : map['next-year']);
   } else {
+    builder.add(diffValue.toString());
+    builder.add(map['space']);
     builder.add(isBefore ? map['years-ago'] : map['years-later']);
   }
 
