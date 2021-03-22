@@ -8,6 +8,7 @@ import 'package:localizations_date/src/local/zh.dart';
 import 'package:localizations_date/src/relative/declare/declare.dart';
 import 'package:localizations_date/src/relative/en.dart';
 import 'package:localizations_date/src/relative/relative.dart';
+import 'package:localizations_date/src/relative/zh.dart';
 
 class GlobalDateLocalizations {
   final Locale locale;
@@ -28,7 +29,7 @@ class GlobalDateLocalizations {
 
   static Map<String, Map<String, String>> _localizedRelativeFormat = {
     'en': localizationDateEnglishRelativeMap,
-    'zh': localizationDateEnglishRelativeMap,
+    'zh': localizationDateChineseRelativeMap,
   };
 
   LocalFormatFunction get _localFormatFunctionMap {
