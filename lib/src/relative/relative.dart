@@ -1,7 +1,8 @@
 import 'package:localizations_date/src/relative/declare/declare.dart';
 
 String localizationDateRelativeFormat(
-  DateTime date, {
+  DateTime date,
+  Map<String, String> map, {
   DateTime now,
   RelativeFormatConfig config,
 }) {
@@ -21,8 +22,8 @@ String localizationDateRelativeFormat(
       Duration(
         minutes: 5,
       ).inMilliseconds) {
-    return 'Just Now';
+    return map['just-now'];
   }
 
   return builder.join();
-};
+}

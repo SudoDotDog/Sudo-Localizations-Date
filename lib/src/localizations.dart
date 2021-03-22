@@ -7,6 +7,7 @@ import 'package:localizations_date/src/local/en.dart';
 import 'package:localizations_date/src/local/zh.dart';
 import 'package:localizations_date/src/relative/declare/declare.dart';
 import 'package:localizations_date/src/relative/en.dart';
+import 'package:localizations_date/src/relative/relative.dart';
 
 class GlobalDateLocalizations {
   final Locale locale;
@@ -25,12 +26,12 @@ class GlobalDateLocalizations {
     'zh': localizationDateChineseLocalFormat,
   };
 
-  static Map<String, RelativeFormatFunction> _localizedRelativeFormat = {
-    'en': localizationDateEnglishRelativeFormat,
-    'zh': localizationDateEnglishRelativeFormat,
+  static Map<String, Map<String, String>> _localizedRelativeFormat = {
+    'en': localizationDateEnglishRelativeMap,
+    'zh': localizationDateEnglishRelativeMap,
   };
 
-  LocalFormatFunction get _localFormatMap {
+  LocalFormatFunction get _localFormatFunctionMap {
     final LocalFormatFunction function =
         _localizedLocalFormat[locale.languageCode];
     if (function == null) {
@@ -39,13 +40,13 @@ class GlobalDateLocalizations {
     return function;
   }
 
-  RelativeFormatFunction get _relativeFormatMap {
-    final RelativeFormatFunction function =
+  Map<String, String> get _relativeFormatMap {
+    final Map<String, String> map =
         _localizedRelativeFormat[locale.languageCode];
-    if (function == null) {
-      return localizationDateEnglishRelativeFormat;
+    if (map == null) {
+      return localizationDateEnglishRelativeMap;
     }
-    return function;
+    return map;
   }
 
   String localFormatDate(
@@ -53,7 +54,7 @@ class GlobalDateLocalizations {
     LocalFormatDateConfig dateConfig,
     LocalFormatTimeConfig timeConfig,
   }) {
-    final String value = this._localFormatMap(
+    final String value = this._localFormatFunctionMap(
       date,
       dateConfig: dateConfig,
       timeConfig: timeConfig,
@@ -63,10 +64,13 @@ class GlobalDateLocalizations {
 
   String relativeFormatDate(
     DateTime date, {
+    DateTime now,
     RelativeFormatConfig config,
   }) {
-    final String value = this._relativeFormatMap(
+    final String value = localizationDateRelativeFormat(
       date,
+      this._relativeFormatMap,
+      now: now,
       config: config,
     );
     return value;
