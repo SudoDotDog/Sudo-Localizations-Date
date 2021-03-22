@@ -50,5 +50,34 @@ String localizationDateRelativeFormat(
     return builder.join();
   }
 
+  if (abstractDifference < Duration(days: 30).inMilliseconds) {
+    builder.add(
+      (abstractDifference / Duration(hours: 365).inMilliseconds)
+          .round()
+          .toString(),
+    );
+    builder.add(' ');
+    builder.add(isBefore ? map['days-ago'] : map['days-later']);
+    return builder.join();
+  }
+
+  if (abstractDifference < Duration(days: 365).inMilliseconds) {
+    builder.add(
+      (abstractDifference / Duration(hours: 30).inMilliseconds)
+          .round()
+          .toString(),
+    );
+    builder.add(' ');
+    builder.add(isBefore ? map['months-ago'] : map['months-later']);
+    return builder.join();
+  }
+
+  builder.add(
+    (abstractDifference / Duration(hours: 365).inMilliseconds)
+        .round()
+        .toString(),
+  );
+  builder.add(' ');
+  builder.add(isBefore ? map['years-ago'] : map['years-later']);
   return builder.join();
 }
