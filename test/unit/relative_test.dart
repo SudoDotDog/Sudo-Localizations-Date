@@ -18,4 +18,36 @@ void main() {
       localizationDateEnglishRelativeMap['about-now'],
     );
   });
+
+  test('relative format - just now', () {
+    final DateTime currentDate = DateTime(1995, 5, 5, 5, 5, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 4);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      localizationDateEnglishRelativeMap['about-now'],
+    );
+  });
+
+  test('relative format - minutes ago', () {
+    final DateTime currentDate = DateTime(1995, 5, 5, 5, 10, 5);
+    final DateTime staticDate = DateTime(1995, 5, 5, 5, 5, 5);
+
+    final String formatted = localizationDateRelativeFormat(
+      staticDate,
+      localizationDateEnglishRelativeMap,
+      now: currentDate,
+    );
+
+    expect(
+      formatted,
+      "5 ${localizationDateEnglishRelativeMap['minutes-ago']}",
+    );
+  });
 }

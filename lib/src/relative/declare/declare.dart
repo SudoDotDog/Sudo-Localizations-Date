@@ -3,7 +3,7 @@ class RelativeFormatConfig {
 
   const RelativeFormatConfig({
     this.justNowMaximumDuration = const Duration(
-      minutes: 5,
+      seconds: 5,
     ),
   });
 }
