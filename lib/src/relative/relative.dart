@@ -18,11 +18,9 @@ String localizationDateRelativeFormat(
   final int abstractDifference = verticalDifference.abs();
   bool isBefore = verticalDifference > 0;
 
-  if (abstractDifference <
-      Duration(
-        minutes: 5,
-      ).inMilliseconds) {
-    return map['just-now'];
+  if (abstractDifference < config.justNowMaximumDuration.inMilliseconds) {
+    builder.add(isBefore ? map['just-now'] : map['about-now']);
+    return builder.join();
   }
 
   return builder.join();
