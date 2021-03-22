@@ -4,7 +4,7 @@ String localizationDateRelativeFormat(
   DateTime date,
   Map<String, String> map, {
   DateTime now,
-  RelativeFormatConfig config,
+  RelativeFormatConfig config = const RelativeFormatConfig(),
 }) {
   final List<String> builder = [];
 
@@ -16,7 +16,7 @@ String localizationDateRelativeFormat(
       date.millisecondsSinceEpoch - now.millisecondsSinceEpoch;
 
   final int abstractDifference = verticalDifference.abs();
-  bool isBefore = verticalDifference > 0;
+  bool isBefore = verticalDifference < 0;
 
   if (abstractDifference < config.justNowMaximumDuration.inMilliseconds) {
     builder.add(isBefore ? map['just-now'] : map['about-now']);
