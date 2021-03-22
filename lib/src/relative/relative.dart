@@ -4,8 +4,12 @@ String localizationDateRelativeFormat(
   DateTime date,
   Map<String, String> map, {
   DateTime now,
-  RelativeFormatConfig config = const RelativeFormatConfig(),
+  RelativeFormatConfig config,
 }) {
+  if (config == null) {
+    config = RelativeFormatConfig();
+  }
+
   final List<String> builder = [];
 
   if (now == null) {

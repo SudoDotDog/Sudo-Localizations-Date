@@ -4,11 +4,9 @@ import 'package:localizations_date/src/local/declare/time.dart';
 
 LocalFormatFunction localizationDateEnglishLocalFormat = (
   DateTime date, {
-  LocalFormatDateConfig dateConfig = LocalFormatDateConfig.none,
-  LocalFormatTimeConfig timeConfig = LocalFormatTimeConfig.none,
+  LocalFormatDateConfig dateConfig,
+  LocalFormatTimeConfig timeConfig,
 }) {
-  final List<String> builder = [];
-
   if (dateConfig == null) {
     dateConfig = LocalFormatDateConfig.none;
   }
@@ -16,6 +14,8 @@ LocalFormatFunction localizationDateEnglishLocalFormat = (
   if (timeConfig == null) {
     timeConfig = LocalFormatTimeConfig.none;
   }
+
+  final List<String> builder = [];
 
   if (dateConfig.ensureIncludes()) {
     if (dateConfig.includesYear) {
