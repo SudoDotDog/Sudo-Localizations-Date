@@ -1,6 +1,6 @@
 import 'package:localizations_date/src/relative/declare/declare.dart';
 
-RelativeFormatFunction localizationDateEnglishRelativeFormat = (
+String localizationDateRelativeFormat(
   DateTime date, {
   DateTime now,
   RelativeFormatConfig config,
