@@ -1,7 +1,9 @@
 class LocalFormatDateSeparatorConfig {
   final String separator;
 
-  const LocalFormatDateSeparatorConfig(this.separator);
+  const LocalFormatDateSeparatorConfig(
+    this.separator,
+  );
 
   static const LocalFormatDateSeparatorConfig dash =
       const LocalFormatDateSeparatorConfig('-');

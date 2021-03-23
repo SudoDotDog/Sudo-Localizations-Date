@@ -18,7 +18,7 @@ class LocalFormatDateConfig {
   });
 
   static const LocalFormatDateConfig all = const LocalFormatDateConfig(
-    separator: LocalFormatDateSeparatorConfig.none,
+    separator: LocalFormatDateSeparatorConfig.dash,
     yearConfig: LocalFormatDateYearConfig.numeric,
     monthConfig: LocalFormatDateMonthConfig.fullText,
     dayConfig: LocalFormatDateDayConfig.tailing,

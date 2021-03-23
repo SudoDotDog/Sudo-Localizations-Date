@@ -23,7 +23,9 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
     if (dateConfig.includesYear) {
       builder.add(date.year.toString());
       if (dateConfig.includesMonth) {
-        builder.add("-");
+        if (dateConfig.hasSeparator) {
+          builder.add(dateConfig.separator.separator);
+        }
       }
     }
 
@@ -31,7 +33,9 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
       final LocalFormatDateMonthConfig monthConfig = dateConfig.monthConfig;
       builder.add(monthConfig.getChineseMonthValue(date.month));
       if (dateConfig.includesDay) {
-        builder.add("-");
+        if (dateConfig.hasSeparator) {
+          builder.add(dateConfig.separator.separator);
+        }
       }
     }
 
