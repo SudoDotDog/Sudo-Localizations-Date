@@ -1,40 +1,33 @@
-String getMonthChineseTexting(
-  int month, {
-  bool fullText,
-}) {
+String getMonthChineseTexting(int month) {
   if (month > 12 || month < 1) {
     return "Invalid Month";
   }
 
-  if (fullText == null) {
-    fullText = false;
-  }
-
   switch (month) {
     case 1:
-      return fullText ? "January" : "Jan";
+      return "一月";
     case 2:
-      return fullText ? "February" : "Feb";
+      return "二月";
     case 3:
-      return fullText ? "March" : "Mar";
+      return "三月";
     case 4:
-      return fullText ? "April" : "Apr";
+      return "四月";
     case 5:
-      return fullText ? "May" : "May";
+      return "五月";
     case 6:
-      return fullText ? "June" : "Jun";
+      return "六月";
     case 7:
-      return fullText ? "July" : "Jul";
+      return "七月";
     case 8:
-      return fullText ? "August" : "Aug";
+      return "八月";
     case 9:
-      return fullText ? "September" : "Sep";
+      return "九月";
     case 10:
-      return fullText ? "October" : "Oct";
+      return "十月";
     case 11:
-      return fullText ? "November" : "Nov";
+      return "十一月";
     case 12:
-      return fullText ? "December" : "Dec";
+      return "十二月";
   }
 
   return "Invalid Month";
