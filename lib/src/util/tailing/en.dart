@@ -1,4 +1,4 @@
-String addDayNumberTailing(int day) {
+String addDayNumberEnglishTailing(int day) {
   if (day > 31 || day < 1) {
     return "Invalid Date";
   }
