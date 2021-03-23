@@ -1,19 +1,19 @@
-String addMonthNumberTailing(int month) {
-  if (month > 31 || month < 1) {
-    return "Invalid Month";
+String addDayNumberTailing(int day) {
+  if (day > 31 || day < 1) {
+    return "Invalid Date";
   }
 
-  if (month == 1 || month == 21 || month == 31) {
-    return "${month}st";
+  if (day == 1 || day == 21 || day == 31) {
+    return "${day}st";
   }
 
-  if (month == 2 || month == 22) {
-    return "${month}nd";
+  if (day == 2 || day == 22) {
+    return "${day}nd";
   }
 
-  if (month == 3 || month == 23) {
-    return "${month}rd";
+  if (day == 3 || day == 23) {
+    return "${day}rd";
   }
 
-  return "${month}th";
+  return "${day}th";
 }
