@@ -1,3 +1,4 @@
+import 'package:localizations_date/localizations_date.dart';
 import 'package:localizations_date/src/local/declare/date.dart';
 import 'package:localizations_date/src/local/declare/declare.dart';
 import 'package:localizations_date/src/local/declare/time.dart';
@@ -26,7 +27,8 @@ LocalFormatFunction localizationDateEnglishLocalFormat = (
     }
 
     if (dateConfig.includesMonth) {
-      builder.add(date.month.toString());
+      final LocalFormatDateMonthConfig monthConfig = dateConfig.monthConfig;
+      builder.add(monthConfig.getEnglishMonthValue(date.month));
       if (dateConfig.includesDay) {
         builder.add("-");
       }
