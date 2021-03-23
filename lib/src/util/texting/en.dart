@@ -1,4 +1,4 @@
-String getMonthTexting(
+String getMonthEnglishTexting(
   int month, {
   bool fullText,
 }) {
