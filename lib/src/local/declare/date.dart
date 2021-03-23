@@ -3,8 +3,6 @@ import 'package:localizations_date/src/local/declare/date/month.dart';
 import 'package:localizations_date/src/local/declare/date/separator.dart';
 
 class LocalFormatDateConfig {
-  final bool includesDate;
-
   final LocalFormatDateSeparatorConfig separator;
 
   final bool includesYear;
@@ -12,7 +10,6 @@ class LocalFormatDateConfig {
   final LocalFormatDateDayConfig dayConfig;
 
   const LocalFormatDateConfig({
-    this.includesDate = true,
     this.separator = LocalFormatDateSeparatorConfig.dash,
     this.includesYear = true,
     this.monthConfig = LocalFormatDateMonthConfig.numeric,
@@ -20,7 +17,6 @@ class LocalFormatDateConfig {
   });
 
   static const LocalFormatDateConfig all = const LocalFormatDateConfig(
-    includesDate: true,
     separator: LocalFormatDateSeparatorConfig.none,
     includesYear: true,
     monthConfig: LocalFormatDateMonthConfig.fullText,
@@ -28,12 +24,15 @@ class LocalFormatDateConfig {
   );
 
   static const LocalFormatDateConfig none = const LocalFormatDateConfig(
-    includesDate: false,
-    separator: LocalFormatDateSeparatorConfig.dash,
+    separator: LocalFormatDateSeparatorConfig.none,
     includesYear: false,
     monthConfig: LocalFormatDateMonthConfig.none,
     dayConfig: LocalFormatDateDayConfig.none,
   );
+
+  bool get includesDate {
+    return this.includesYear || this.includesMonth || this.includesDay;
+  }
 
   bool get hasSeparator {
     return this.separator.hasSeparator();
@@ -45,12 +44,5 @@ class LocalFormatDateConfig {
 
   bool get includesDay {
     return this.dayConfig.includes();
-  }
-
-  bool ensureIncludes() {
-    if (!this.includesDate) {
-      return false;
-    }
-    return this.includesYear || this.includesMonth || this.includesDay;
   }
 }

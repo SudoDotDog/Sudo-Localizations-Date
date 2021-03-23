@@ -19,7 +19,7 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
 
   final List<String> builder = [];
 
-  if (dateConfig.ensureIncludes()) {
+  if (dateConfig.includesDate) {
     if (dateConfig.includesYear) {
       builder.add(date.year.toString());
       if (dateConfig.includesMonth) {
@@ -40,12 +40,12 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
       builder.add(dayConfig.getChineseDayValue(date.day));
     }
 
-    if (timeConfig.ensureIncludes()) {
+    if (timeConfig.includesTime) {
       builder.add(' ');
     }
   }
 
-  if (timeConfig.ensureIncludes()) {
+  if (timeConfig.includesTime) {
     if (timeConfig.includesHour) {
       builder.add(date.hour.toString());
       if (timeConfig.includesMinute) {
