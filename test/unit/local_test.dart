@@ -5,7 +5,7 @@ import 'package:localizations_date/src/local/en.dart';
 
 void main() {
   test('english local format - all', () {
-    final DateTime date = DateTime.now();
+    final DateTime date = DateTime(2015, 2, 2, 5, 5, 5);
 
     final String formatted = localizationDateEnglishLocalFormat(
       date,
@@ -13,23 +13,17 @@ void main() {
       timeConfig: LocalFormatTimeConfig.all,
     );
 
-    expect(
-      formatted,
-      "${date.year}-${date.month}-${date.day} ${date.hour}:${date.minute}:${date.second}",
-    );
+    expect(formatted, "2015-February-2nd 5:5:5");
   });
 
   test('english local format - date only', () {
-    final DateTime date = DateTime.now();
+    final DateTime date = DateTime(2015, 2, 2, 5, 5, 5);
 
     final String formatted = localizationDateEnglishLocalFormat(
       date,
       dateConfig: LocalFormatDateConfig.all,
     );
 
-    expect(
-      formatted,
-      "${date.year}-${date.month}-${date.day}",
-    );
+    expect(formatted, "2015-February-2nd");
   });
 }

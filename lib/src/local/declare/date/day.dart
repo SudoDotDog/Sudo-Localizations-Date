@@ -22,7 +22,7 @@ class LocalFormatDateDayConfig {
   String getEnglishDayValue(int day) {
     switch (this.dateType) {
       case 'numeric':
-        return day.toString();
+        return this._joinNumericDay(day);
       case 'tailing':
         return addDayNumberEnglishTailing(day);
     }
@@ -33,11 +33,19 @@ class LocalFormatDateDayConfig {
   String getChineseDayValue(int day) {
     switch (this.dateType) {
       case 'numeric':
-        return day.toString();
+        return this._joinNumericDay(day);
       case 'tailing':
         return addDayNumberChineseTailing(day);
     }
 
     return "Invalid Type";
+  }
+
+  String _joinNumericDay(int day) {
+    final String dayString = day.toString();
+    if (dayString.length == 1) {
+      return "0$dayString";
+    }
+    return dayString;
   }
 }

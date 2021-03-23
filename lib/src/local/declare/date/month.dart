@@ -25,7 +25,7 @@ class LocalFormatDateMonthConfig {
   String getEnglishMonthValue(int month) {
     switch (this.monthType) {
       case 'numeric':
-        return month.toString();
+        return this._joinNumericMonth(month);
       case 'semi-full-text':
         return getMonthEnglishTexting(month);
       case 'full-text':
@@ -38,12 +38,20 @@ class LocalFormatDateMonthConfig {
   String getChineseMonthValue(int month) {
     switch (this.monthType) {
       case 'numeric':
-        return month.toString();
+        return this._joinNumericMonth(month);
       case 'semi-full-text':
       case 'full-text':
         return getMonthChineseTexting(month);
     }
 
     return "Invalid Type";
+  }
+
+  String _joinNumericMonth(int month) {
+    final String monthString = month.toString();
+    if (monthString.length == 1) {
+      return "0$monthString";
+    }
+    return monthString;
   }
 }
