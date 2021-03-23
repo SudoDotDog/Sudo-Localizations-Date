@@ -1,47 +1,41 @@
-import 'package:localizations_date/src/util/texting/en.dart';
-import 'package:localizations_date/src/util/texting/zh.dart';
+import 'package:localizations_date/src/util/tailing/en.dart';
+import 'package:localizations_date/src/util/tailing/zh.dart';
 
-class LocalFormatDateDateConfig {
+class LocalFormatDateDayConfig {
   final String dateType;
 
-  const LocalFormatDateDateConfig(this.dateType);
+  const LocalFormatDateDayConfig(this.dateType);
 
-  static const LocalFormatDateDateConfig numeric =
-      const LocalFormatDateDateConfig('numeric');
+  static const LocalFormatDateDayConfig numeric =
+      const LocalFormatDateDayConfig('numeric');
 
-  static const LocalFormatDateDateConfig semiFullText =
-      const LocalFormatDateDateConfig('semi-full-text');
+  static const LocalFormatDateDayConfig tailing =
+      const LocalFormatDateDayConfig('tailing');
 
-  static const LocalFormatDateDateConfig fullText =
-      const LocalFormatDateDateConfig('full-text');
-
-  static const LocalFormatDateDateConfig none =
-      const LocalFormatDateDateConfig('none');
+  static const LocalFormatDateDayConfig none =
+      const LocalFormatDateDayConfig('none');
 
   bool includes() {
     return this.dateType != 'none';
   }
 
-  String getEnglishMonthValue(int month) {
-    switch (this.monthType) {
+  String getEnglishDayValue(int day) {
+    switch (this.dateType) {
       case 'numeric':
-        return month.toString();
-      case 'semi-full-text':
-        return getMonthEnglishTexting(month);
-      case 'full-text':
-        return getMonthEnglishTexting(month, fullText: true);
+        return day.toString();
+      case 'tailing':
+        return addDayNumberEnglishTailing(day);
     }
 
     return "Invalid Type";
   }
 
-  String getChineseMonthValue(int month) {
-    switch (this.monthType) {
+  String getChineseDayValue(int day) {
+    switch (this.dateType) {
       case 'numeric':
-        return month.toString();
-      case 'semi-full-text':
-      case 'full-text':
-        return getMonthChineseTexting(month);
+        return day.toString();
+      case 'tailing':
+        return addDayNumberChineseTailing(day);
     }
 
     return "Invalid Type";
