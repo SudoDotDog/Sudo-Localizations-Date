@@ -1,4 +1,5 @@
 import 'package:localizations_date/src/util/texting/en.dart';
+import 'package:localizations_date/src/util/texting/zh.dart';
 
 class LocalFormatDateMonthConfig {
   final String monthType;
@@ -29,6 +30,18 @@ class LocalFormatDateMonthConfig {
         return getMonthEnglishTexting(month);
       case 'full-text':
         return getMonthEnglishTexting(month, fullText: true);
+    }
+
+    return "Invalid Type";
+  }
+
+  String getChineseMonthValue(int month) {
+    switch (this.monthType) {
+      case 'numeric':
+        return month.toString();
+      case 'semi-full-text':
+      case 'full-text':
+        return getMonthChineseTexting(month);
     }
 
     return "Invalid Type";
