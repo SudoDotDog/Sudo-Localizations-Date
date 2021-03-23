@@ -1,4 +1,5 @@
 import 'package:localizations_date/src/local/declare/date.dart';
+import 'package:localizations_date/src/local/declare/date/day.dart';
 import 'package:localizations_date/src/local/declare/date/month.dart';
 import 'package:localizations_date/src/local/declare/declare.dart';
 import 'package:localizations_date/src/local/declare/time.dart';
@@ -35,7 +36,8 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
     }
 
     if (dateConfig.includesDay) {
-      builder.add(date.day.toString());
+      final LocalFormatDateDayConfig dayConfig = dateConfig.dayConfig;
+      builder.add(dayConfig.getChineseDayValue(date.day));
     }
 
     if (timeConfig.ensureIncludes()) {
