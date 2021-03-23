@@ -1,46 +1,35 @@
+import 'package:localizations_date/src/local/declare/date/month.dart';
+
 class LocalFormatDateConfig {
   final bool includesDate;
 
   final bool includesYear;
-  final bool includesMonth;
+  final LocalFormatDateMonthConfig monthConfig;
   final bool includesDay;
 
   const LocalFormatDateConfig({
     this.includesDate = true,
     this.includesYear = true,
-    this.includesMonth = true,
+    this.monthConfig = LocalFormatDateMonthConfig.numeric,
     this.includesDay = true,
   });
 
   static const LocalFormatDateConfig all = const LocalFormatDateConfig(
     includesDate: true,
     includesYear: true,
-    includesMonth: true,
+    monthConfig: LocalFormatDateMonthConfig.fullText,
     includesDay: true,
   );
 
   static const LocalFormatDateConfig none = const LocalFormatDateConfig(
     includesDate: false,
     includesYear: false,
-    includesMonth: false,
+    monthConfig: LocalFormatDateMonthConfig.none,
     includesDay: false,
   );
 
-  factory LocalFormatDateConfig.only({
-    bool year,
-    bool month,
-    bool day,
-  }) {
-    if (!year && !month && !day) {
-      return LocalFormatDateConfig.none;
-    }
-
-    return LocalFormatDateConfig(
-      includesDate: true,
-      includesYear: year,
-      includesMonth: month,
-      includesDay: day,
-    );
+  bool get includesMonth {
+    return this.monthConfig.includes();
   }
 
   bool ensureIncludes() {
