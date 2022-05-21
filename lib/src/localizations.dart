@@ -16,10 +16,16 @@ class GlobalDateLocalizations {
   GlobalDateLocalizations(this.locale);
 
   static GlobalDateLocalizations of(BuildContext context) {
-    return Localizations.of<GlobalDateLocalizations>(
+    final GlobalDateLocalizations? localizations =
+        Localizations.of<GlobalDateLocalizations>(
       context,
       GlobalDateLocalizations,
     );
+
+    if (localizations == null) {
+      throw FlutterError('Context not found: $context');
+    }
+    return localizations;
   }
 
   static Map<String, LocalFormatFunction> _localizedLocalFormat = {
@@ -33,7 +39,7 @@ class GlobalDateLocalizations {
   };
 
   LocalFormatFunction get _localFormatFunctionMap {
-    final LocalFormatFunction function =
+    final LocalFormatFunction? function =
         _localizedLocalFormat[locale.languageCode];
     if (function == null) {
       return localizationDateEnglishLocalFormat;
@@ -42,7 +48,7 @@ class GlobalDateLocalizations {
   }
 
   Map<String, String> get _relativeFormatMap {
-    final Map<String, String> map =
+    final Map<String, String>? map =
         _localizedRelativeFormat[locale.languageCode];
     if (map == null) {
       return localizationDateEnglishRelativeMap;
@@ -52,8 +58,8 @@ class GlobalDateLocalizations {
 
   String localFormatDate(
     DateTime date, {
-    LocalFormatDateConfig dateConfig,
-    LocalFormatTimeConfig timeConfig,
+    LocalFormatDateConfig? dateConfig,
+    LocalFormatTimeConfig? timeConfig,
   }) {
     final String value = this._localFormatFunctionMap(
       date,
@@ -65,8 +71,8 @@ class GlobalDateLocalizations {
 
   String relativeFormatDate(
     DateTime date, {
-    DateTime now,
-    RelativeFormatConfig config,
+    DateTime? now,
+    RelativeFormatConfig? config,
   }) {
     final String value = localizationDateRelativeFormat(
       date,

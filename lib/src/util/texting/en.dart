@@ -1,13 +1,9 @@
 String getMonthEnglishTexting(
   int month, {
-  bool fullText,
+  bool fullText = false,
 }) {
   if (month > 12 || month < 1) {
     return "Invalid Month";
-  }
-
-  if (fullText == null) {
-    fullText = false;
   }
 
   switch (month) {

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:localizations_date/localizations_date.dart';
 import 'package:localizations_date/src/local/declare/date.dart';
 import 'package:localizations_date/src/local/declare/time.dart';
+import 'package:localizations_date/src/localizations.dart';
 
 class MockParseWidget extends StatelessWidget {
   final Locale locale;
 
   final DateTime date;
-  final LocalFormatDateConfig dateConfig;
-  final LocalFormatTimeConfig timeConfig;
+  final LocalFormatDateConfig? dateConfig;
+  final LocalFormatTimeConfig? timeConfig;
 
   MockParseWidget({
-    @required this.locale,
-    @required this.date,
+    required this.locale,
+    required this.date,
     this.dateConfig,
     this.timeConfig,
   });

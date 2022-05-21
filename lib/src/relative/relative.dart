@@ -3,14 +3,14 @@ import 'package:localizations_date/src/relative/declare/declare.dart';
 String localizationDateRelativeFormat(
   DateTime date,
   Map<String, String> map, {
-  DateTime now,
-  RelativeFormatConfig config,
+  DateTime? now,
+  RelativeFormatConfig? config,
 }) {
   if (config == null) {
     config = RelativeFormatConfig();
   }
 
-  final List<String> builder = [];
+  final List<String?> builder = [];
 
   if (now == null) {
     now = DateTime.now();

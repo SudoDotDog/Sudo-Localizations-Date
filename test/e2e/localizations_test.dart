@@ -17,7 +17,7 @@ void main() {
     );
 
     final Finder textFinder = find.byType(Text);
-    final Text textWidget = textFinder.evaluate().single.widget;
+    final Text textWidget = textFinder.evaluate().single.widget as Text;
 
     expect(
       textWidget.data,
