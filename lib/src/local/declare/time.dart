@@ -5,10 +5,10 @@ class LocalFormatTimeConfig {
   final bool includesMillisecond;
 
   const LocalFormatTimeConfig({
-    this.includesHour = true,
-    this.includesMinute = true,
-    this.includesSecond = true,
-    this.includesMillisecond = true,
+    required this.includesHour,
+    required this.includesMinute,
+    required this.includesSecond,
+    required this.includesMillisecond,
   });
 
   static const LocalFormatTimeConfig all = const LocalFormatTimeConfig(
@@ -26,15 +26,11 @@ class LocalFormatTimeConfig {
   );
 
   factory LocalFormatTimeConfig.only({
-    bool hour,
-    bool minute,
-    bool second,
-    bool millisecond,
+    bool hour = false,
+    bool minute = false,
+    bool second = false,
+    bool millisecond = false,
   }) {
-    if (!hour && !minute && !second && !millisecond) {
-      return LocalFormatTimeConfig.none;
-    }
-
     return LocalFormatTimeConfig(
       includesHour: hour,
       includesMinute: minute,

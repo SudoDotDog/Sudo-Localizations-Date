@@ -1,5 +1,5 @@
 class LocalFormatDateSeparatorConfig {
-  final String separator;
+  final String? separator;
 
   const LocalFormatDateSeparatorConfig(
     this.separator,

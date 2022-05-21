@@ -6,8 +6,8 @@ import 'package:localizations_date/src/local/declare/time.dart';
 
 LocalFormatFunction localizationDateEnglishLocalFormat = (
   DateTime date, {
-  LocalFormatDateConfig dateConfig,
-  LocalFormatTimeConfig timeConfig,
+  LocalFormatDateConfig? dateConfig,
+  LocalFormatTimeConfig? timeConfig,
 }) {
   if (dateConfig == null) {
     dateConfig = LocalFormatDateConfig.none;
@@ -24,7 +24,9 @@ LocalFormatFunction localizationDateEnglishLocalFormat = (
       builder.add(date.year.toString());
       if (dateConfig.includesMonth) {
         if (dateConfig.hasSeparator) {
-          builder.add(dateConfig.separator.separator);
+          if (dateConfig.separator.separator != null) {
+            builder.add(dateConfig.separator.separator!);
+          }
         }
       }
     }
@@ -34,7 +36,9 @@ LocalFormatFunction localizationDateEnglishLocalFormat = (
       builder.add(monthConfig.getEnglishMonthValue(date.month));
       if (dateConfig.includesDay) {
         if (dateConfig.hasSeparator) {
-          builder.add(dateConfig.separator.separator);
+          if (dateConfig.separator.separator != null) {
+            builder.add(dateConfig.separator.separator!);
+          }
         }
       }
     }
