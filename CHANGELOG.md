@@ -1,16 +1,20 @@
 ## 1.0.0
 
--   First Major Release
+- First Major Release
 
 ## 1.1.0
 
--   Use natural language for singled digit
--   Fix default config
+- Use natural language for singled digit
+- Fix default config
 
 ## 1.2.0
 
--   Use sounds null safety
+- Use sounds null safety
 
 ## 1.2.1
 
--   Assert localization getting
+- Assert localization getting
+
+## 1.3.0
+
+- Support null safety

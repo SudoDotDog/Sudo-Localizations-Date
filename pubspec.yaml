@@ -1,10 +1,10 @@
 name: localizations_date
 description: Localization flutter - Date
-version: 1.2.1
+version: 1.3.0
 homepage: https://sudo.dog
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.0.5 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
