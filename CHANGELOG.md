@@ -23,3 +23,8 @@
 
 - Fix numeric month and day
 - Fix default config
+
+## 1.5.0
+
+- Add 12 hour format
+- Fix pad left for time
