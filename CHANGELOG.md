@@ -18,3 +18,8 @@
 ## 1.3.0
 
 - Support null safety
+
+## 1.4.0
+
+- Fix numeric month and day
+- Fix default config
