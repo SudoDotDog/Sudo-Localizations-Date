@@ -89,6 +89,23 @@ LocalFormatFunction localizationDateEnglishLocalFormat = (
       builder.add(
         date.second.toString().padLeft(2, '0'),
       );
+      if (timeConfig.includesMillisecond) {
+        builder.add(".");
+      }
+    }
+
+    if (timeConfig.includesMillisecond) {
+      builder.add(
+        date.millisecond.toString().padLeft(3, '0'),
+      );
+    }
+
+    if (timeConfig.uses12HourClock) {
+      if (date.hour > 12) {
+        builder.add(' PM');
+      } else {
+        builder.add(' AM');
+      }
     }
   }
 
