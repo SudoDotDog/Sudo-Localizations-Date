@@ -24,6 +24,13 @@ class LocalFormatDateConfig {
     dayConfig: LocalFormatDateDayConfig.tailing,
   );
 
+  static const LocalFormatDateConfig allNumeric = const LocalFormatDateConfig(
+    separator: LocalFormatDateSeparatorConfig.dash,
+    yearConfig: LocalFormatDateYearConfig.numeric,
+    monthConfig: LocalFormatDateMonthConfig.numeric,
+    dayConfig: LocalFormatDateDayConfig.numeric,
+  );
+
   static const LocalFormatDateConfig none = const LocalFormatDateConfig(
     separator: LocalFormatDateSeparatorConfig.none,
     yearConfig: LocalFormatDateYearConfig.none,

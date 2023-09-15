@@ -12,7 +12,7 @@ void main() {
       MockParseWidget(
         locale: Locale('en'),
         date: date,
-        dateConfig: LocalFormatDateConfig.all,
+        dateConfig: LocalFormatDateConfig.allNumeric,
       ),
     );
 
@@ -21,7 +21,7 @@ void main() {
 
     expect(
       textWidget.data,
-      "${date.year}-${date.month}-${date.day}",
+      "${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
     );
   });
 }
