@@ -4,11 +4,14 @@ class LocalFormatTimeConfig {
   final bool includesSecond;
   final bool includesMillisecond;
 
+  final bool uses12HourClock;
+
   const LocalFormatTimeConfig({
     required this.includesHour,
     required this.includesMinute,
     required this.includesSecond,
     required this.includesMillisecond,
+    required this.uses12HourClock,
   });
 
   static const LocalFormatTimeConfig all = const LocalFormatTimeConfig(
@@ -16,6 +19,7 @@ class LocalFormatTimeConfig {
     includesMinute: true,
     includesSecond: true,
     includesMillisecond: true,
+    uses12HourClock: false,
   );
 
   static const LocalFormatTimeConfig none = const LocalFormatTimeConfig(
@@ -23,6 +27,7 @@ class LocalFormatTimeConfig {
     includesMinute: false,
     includesSecond: false,
     includesMillisecond: false,
+    uses12HourClock: false,
   );
 
   factory LocalFormatTimeConfig.only({
@@ -30,12 +35,14 @@ class LocalFormatTimeConfig {
     bool minute = false,
     bool second = false,
     bool millisecond = false,
+    bool uses12HourClock = false,
   }) {
     return LocalFormatTimeConfig(
       includesHour: hour,
       includesMinute: minute,
       includesSecond: second,
       includesMillisecond: millisecond,
+      uses12HourClock: uses12HourClock,
     );
   }
 

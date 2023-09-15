@@ -55,9 +55,22 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
 
   if (timeConfig.includesTime) {
     if (timeConfig.includesHour) {
-      builder.add(
-        date.hour.toString().padLeft(2, '0'),
-      );
+      if (timeConfig.uses12HourClock) {
+        if (date.hour > 12) {
+          builder.add(
+            (date.hour - 12).toString().padLeft(2, '0'),
+          );
+        } else {
+          builder.add(
+            date.hour.toString().padLeft(2, '0'),
+          );
+        }
+      } else {
+        builder.add(
+          date.hour.toString().padLeft(2, '0'),
+        );
+      }
+
       if (timeConfig.includesMinute) {
         builder.add(":");
       }

@@ -13,7 +13,7 @@ void main() {
       timeConfig: LocalFormatTimeConfig.all,
     );
 
-    expect(formatted, "2015-February-2nd 5:5:5");
+    expect(formatted, "2015-February-2nd 05:05:05");
   });
 
   test('english local format - date only', () {
