@@ -55,21 +55,27 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
 
   if (timeConfig.includesTime) {
     if (timeConfig.includesHour) {
-      builder.add(date.hour.toString());
+      builder.add(
+        date.hour.toString().padLeft(2, '0'),
+      );
       if (timeConfig.includesMinute) {
         builder.add(":");
       }
     }
 
     if (timeConfig.includesMinute) {
-      builder.add(date.minute.toString());
+      builder.add(
+        date.minute.toString().padLeft(2, '0'),
+      );
       if (timeConfig.includesSecond) {
         builder.add(":");
       }
     }
 
     if (timeConfig.includesSecond) {
-      builder.add(date.second.toString());
+      builder.add(
+        date.second.toString().padLeft(2, '0'),
+      );
     }
   }
 
