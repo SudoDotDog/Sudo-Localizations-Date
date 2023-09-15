@@ -10,7 +10,7 @@ void main() {
     final String formatted = localizationDateEnglishLocalFormat(
       date,
       dateConfig: LocalFormatDateConfig.all,
-      timeConfig: LocalFormatTimeConfig.all,
+      timeConfig: LocalFormatTimeConfig.allWithoutMillisecond,
     );
 
     expect(formatted, "2015-February-2nd 05:05:05");

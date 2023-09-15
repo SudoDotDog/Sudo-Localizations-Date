@@ -56,6 +56,10 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
   if (timeConfig.includesTime) {
     if (timeConfig.includesHour) {
       if (timeConfig.uses12HourClock) {
+        builder.add(
+          date.hour > 12 ? "下午 " : "上午 ",
+        );
+
         if (date.hour > 12) {
           builder.add(
             (date.hour - 12).toString().padLeft(2, '0'),
@@ -98,14 +102,6 @@ LocalFormatFunction localizationDateChineseLocalFormat = (
       builder.add(
         date.millisecond.toString().padLeft(3, '0'),
       );
-    }
-
-    if (timeConfig.uses12HourClock) {
-      if (date.hour > 12) {
-        builder.add(' PM');
-      } else {
-        builder.add(' AM');
-      }
     }
   }
 

@@ -100,7 +100,7 @@ LocalFormatFunction localizationDateEnglishLocalFormat = (
       );
     }
 
-    if (timeConfig.uses12HourClock) {
+    if (timeConfig.includesHour && timeConfig.uses12HourClock) {
       if (date.hour > 12) {
         builder.add(' PM');
       } else {

@@ -14,6 +14,15 @@ class LocalFormatTimeConfig {
     required this.uses12HourClock,
   });
 
+  static const LocalFormatTimeConfig allWithoutMillisecond =
+      const LocalFormatTimeConfig(
+    includesHour: true,
+    includesMinute: true,
+    includesSecond: true,
+    includesMillisecond: false,
+    uses12HourClock: false,
+  );
+
   static const LocalFormatTimeConfig all = const LocalFormatTimeConfig(
     includesHour: true,
     includesMinute: true,
