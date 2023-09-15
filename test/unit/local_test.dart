@@ -4,16 +4,40 @@ import 'package:localizations_date/src/local/declare/time.dart';
 import 'package:localizations_date/src/local/en.dart';
 
 void main() {
+  test('english local format - all without millisecond', () {
+    final DateTime date = DateTime(2015, 2, 2, 5, 5, 5);
+
+    final String formatted = localizationDateEnglishLocalFormat(
+      date,
+      dateConfig: LocalFormatDateConfig.all,
+      timeConfig: LocalFormatTimeConfig.full24Hours,
+    );
+
+    expect(formatted, "2015-February-2nd 05:05:05");
+  });
+
+  test('english local format - all without millisecond 12 hours', () {
+    final DateTime date = DateTime(2015, 2, 2, 5, 5, 5);
+
+    final String formatted = localizationDateEnglishLocalFormat(
+      date,
+      dateConfig: LocalFormatDateConfig.all,
+      timeConfig: LocalFormatTimeConfig.full12Hours,
+    );
+
+    expect(formatted, "2015-February-2nd 05:05:05 AM");
+  });
+
   test('english local format - all', () {
     final DateTime date = DateTime(2015, 2, 2, 5, 5, 5);
 
     final String formatted = localizationDateEnglishLocalFormat(
       date,
       dateConfig: LocalFormatDateConfig.all,
-      timeConfig: LocalFormatTimeConfig.allWithoutMillisecond,
+      timeConfig: LocalFormatTimeConfig.all,
     );
 
-    expect(formatted, "2015-February-2nd 05:05:05");
+    expect(formatted, "2015-February-2nd 05:05:05.000");
   });
 
   test('english local format - date only', () {
